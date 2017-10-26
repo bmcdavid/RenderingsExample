@@ -4,6 +4,7 @@ using RenderingsExample.Business;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 using System.Linq;
+using RenderingsExample.Business.Blogs;
 
 namespace RenderingsExample.Models.ViewModels
 {
@@ -14,28 +15,20 @@ namespace RenderingsExample.Models.ViewModels
 
         public IRenderingAliasResolver _renderingResolver { get; }
 
-        public Blog(IPublishedContent content, ViewDependencies viewDependencies) : base(content, viewDependencies)
+        private readonly BlogListingService _blogListingService;
+
+        public Blog(IPublishedContent content, ViewDependencies viewDependencies, BlogListingService blogListingService) : base(content, viewDependencies)
         {
             _renderignCreator = viewDependencies.RenderingCreatorScoped;
             _renderingResolver = viewDependencies.RenderingAliasResolver;
+            _blogListingService = blogListingService;
         }
 
         public IEnumerable<BlogPost> BlogPosts
         {
             get
             {
-                var postAlias = _renderingResolver.ResolveType(typeof(BlogPost));
-                var creator = _renderignCreator.GetCreator<IPublishedContent>(postAlias);
-
-                var children = Content.Children
-                            .Where(x => x.DocumentTypeAlias == postAlias)
-                            .OrderByDescending(x => x.CreateDate)
-                            .Take(HowManyPostsShouldBeShown);
-
-                foreach(var x in children)
-                {
-                    yield return creator.Invoke(x) as BlogPost;
-                }
+                return _blogListingService.GetBlogPosts(Content.Id, HowManyPostsShouldBeShown);
             }
         }
 

@@ -375,7 +375,9 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
-    <Content Include="config\trees.config" />
+    <Content Include="config\trees.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="default.aspx" />
     <Content Include="docs\MySqlCommand.xml" />
     <Content Include="docs\MySqlCommandBuilder.xml" />
@@ -452,6 +454,7 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="ApplicationSetupMvc.cs" />
+    <Compile Include="Business\Blogs\BlogListingService.cs" />
     <Compile Include="Business\Constants.cs" />
     <Compile Include="Business\RenderingCoordinator.cs" />
     <Compile Include="Business\Startup\CustomStartupConfiguration.cs" />
