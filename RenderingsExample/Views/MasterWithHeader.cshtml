@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IWebPage>
+
+@{ 
+    Layout = "Master.cshtml";
+}
+
+<section class="section section--themed section--header section--content-center-bottom">
+    <div class="section__hero-content">
+        <h1 class="no-air">@Model.PageTitle</h1>
+    </div>
+</section>
+
+@RenderBody()

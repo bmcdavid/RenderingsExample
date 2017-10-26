@@ -1,10 +1,9 @@
 ﻿using Renderings;
-using System.Collections.Generic;
 using RenderingsExample.Business;
+using RenderingsExample.Business.Blogs;
+using System.Collections.Generic;
 using Umbraco.Core.Models;
 using Umbraco.Web;
-using System.Linq;
-using RenderingsExample.Business.Blogs;
 
 namespace RenderingsExample.Models.ViewModels
 {

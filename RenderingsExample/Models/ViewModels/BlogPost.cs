@@ -29,6 +29,6 @@ namespace RenderingsExample.Models.ViewModels
         public string Excerpt
         {
             get { return Content.GetPropertyValue<string>("excerpt"); }
-        }        
+        }
     }
 }

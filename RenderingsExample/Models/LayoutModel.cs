@@ -54,6 +54,5 @@ namespace RenderingsExample.Models
                 return _Settings;
             }
         }
-
     }
 }

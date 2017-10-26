@@ -318,6 +318,12 @@
       <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Terratype, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Terratype.1.0.13\lib\net45\Terratype.dll</HintPath>
+    </Reference>
+    <Reference Include="Terratype.GoogleMapsV3, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Terratype.GoogleMapsV3.1.0.13\lib\net45\Terratype.GoogleMapsV3.dll</HintPath>
+    </Reference>
     <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
       <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\TidyNet.dll</HintPath>
     </Reference>
@@ -439,6 +445,8 @@
     <Content Include="Views\Partials\Pages\PageBase.cshtml" />
     <Content Include="Views\Master-Old.cshtml" />
     <Content Include="Views\Partials\Pages\BlogPost.cshtml" />
+    <Content Include="Views\MasterWithHeader.cshtml" />
+    <Content Include="Views\Partials\Blocks\Feature.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -464,10 +472,16 @@
     <Compile Include="Models\IWebPage.cs" />
     <Compile Include="Models\LayoutModel.cs" />
     <Compile Include="Models\SiteSettings.cs" />
+    <Compile Include="Models\ViewModels\Blocks\BlockBase.cs" />
+    <Compile Include="Models\ViewModels\Blocks\Feature.cs" />
     <Compile Include="Models\ViewModels\Blog.cs" />
     <Compile Include="Models\ViewModels\BlogPost.cs" />
+    <Compile Include="Models\ViewModels\Contact.cs" />
+    <Compile Include="Models\ViewModels\ContentPage.cs" />
     <Compile Include="Models\ViewModels\Home.cs" />
     <Compile Include="Models\ViewModels\PageBase.cs" />
+    <Compile Include="Models\ViewModels\Product.cs" />
+    <Compile Include="Models\ViewModels\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

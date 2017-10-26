@@ -5,6 +5,8 @@ namespace RenderingsExample.Models
 {
     public interface IWebPage
     {
+        string PageTitle { get; }
+
         CultureInfo CurrentCulture { get; }
 
         IPublishedContent Content { get; }

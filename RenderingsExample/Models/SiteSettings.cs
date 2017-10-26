@@ -49,7 +49,7 @@ namespace RenderingsExample.Models
         {
             get { return Content.GetPropertyValue<string>("footerAddress"); }
         }
-       
+
         ///<summary>
         /// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
         ///</summary>
@@ -58,6 +58,7 @@ namespace RenderingsExample.Models
         {
             get { return _SiteLogo = _SiteLogo ?? Content.GetPropertyValue<IPublishedContent>("SiteLogo"); }
         }
+
         ///<summary>
         /// Sitename: Used on the homepage as well as the title and social cards
         ///</summary>

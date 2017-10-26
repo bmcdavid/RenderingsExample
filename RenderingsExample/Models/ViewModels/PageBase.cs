@@ -20,10 +20,15 @@ namespace RenderingsExample.Models.ViewModels
             _renderingCoordinator = viewDependencies.RenderingCoordinator;
         }
 
+        //{{"name": "1 column layout",  "sections": [{ "grid": 12,  "rows": []    }  ]}}
+        public bool HasBodyContent => BodyText.HasValues && BodyText["sections"][0].Value<JArray>("rows").Count > 0;
+
+        private JToken _BodyText;
+
         [RenderingPropertyAlias(PropertyAliases.BodyTextPropertyAlias)]
         public JToken BodyText
         {
-            get { return Content.GetPropertyValue<JToken>(PropertyAliases.BodyTextPropertyAlias); }
+            get { return _BodyText = _BodyText ?? Content.GetPropertyValue<JToken>(PropertyAliases.BodyTextPropertyAlias); }
         }
 
         public string BodyTextPropertyAlias => PropertyAliases.BodyTextPropertyAlias;
@@ -31,7 +36,7 @@ namespace RenderingsExample.Models.ViewModels
         public IPublishedContent Content { get; }
         public CultureInfo CurrentCulture { get; set; }
         public virtual bool IsFullPage => true;
-        
+
         [RenderingPropertyAlias("keywords")]
         public IEnumerable<string> Keywords
         {
@@ -45,9 +50,9 @@ namespace RenderingsExample.Models.ViewModels
         [RenderingPropertyAlias("pageTitle")]
         public string PageTitle
         {
-            get { return Content.GetPropertyValue<string>("pageTitle"); }
+            get { return Content.GetPropertyValue<string>("pageTitle", true); }
         }
-        
+
         [RenderingPropertyAlias("seoMetaDescription")]
         public string SeoMetaDescription
         {
@@ -55,7 +60,7 @@ namespace RenderingsExample.Models.ViewModels
         }
 
         public UmbracoHelper Umbraco { get; }
-        
+
         [RenderingPropertyAlias("umbracoNavihide")]
         public bool UmbracoNavihide
         {

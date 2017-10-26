@@ -1,32 +1,26 @@
-﻿@inherits UmbracoTemplatePage<Contact>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@using Terratype;
+﻿@model RenderingsExample.Models.ViewModels.Contact
+@using Terratype
 @{
-    Layout = "Master-Old.cshtml";
+    Layout = "MasterWithHeader.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-
 <section class="section">
     <div class="container">
-
         <div class="row">
-
             <div class="col-md-6">
-                <h2>@Model.Content.MapHeader</h2>
-                @Html.Terratype(Model.Content.Map)
+                <h2>@Model.MapHeader</h2>
+                @Html.Terratype(Model.Map)
             </div>
-
             <div class="col-md-6">
-                <h2>@Model.Content.ContactFormHeader</h2>
-                @Model.Content.ContactIntro
+                <h2>@Model.ContactFormHeader</h2>
+                @Model.ContactIntro
                 <p class="compat-msg">
-        <em>Umbraco Forms</em> is required to render this form.It's a breeze to install, all you have to do is
-        go to the<em> Umbraco Forms</em> section in the back office and click Install, that's it! :) 
-        <br /><br />
-        <a href="/umbraco/#/forms" class="button button--border--solid">Go to Back Office and install Forms</a>
-        <!-- When Umbraco Forms is installed, uncomment this line -->
-        @* @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.Content.ContactForm.ToString()}) *@
-        </p>
+                    <em>Umbraco Forms</em> is required to render this form.It's a breeze to install, all you have to do is
+                    go to the<em> Umbraco Forms</em> section in the back office and click Install, that's it! :)
+                    <br /><br />
+                    <a href="/umbraco/#/forms" class="button button--border--solid">Go to Back Office and install Forms</a>
+                    <!-- When Umbraco Forms is installed, uncomment this line -->
+                    @* @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.Content.ContactForm.ToString()}) *@
+                </p>
             </div>
         </div>
     </div>

@@ -4,18 +4,18 @@
     var startNodeId = Model.MacroParameters["startNodeId"] != null ? Model.MacroParameters["startNodeId"] : Model.Content.Id;
     var numberOfPosts = Model.MacroParameters["numberOfPosts"] != null ? Model.MacroParameters["numberOfPosts"] : 3;
 }
-@if(startNodeId != null)
+@if (startNodeId != null)
 {
-var scopedLocator = this.Context.GetScopedLocator();
-var blogService = scopedLocator.Get<RenderingsExample.Business.Blogs.BlogListingService>();
-var blogposts = blogService.GetBlogPosts(startNodeId, Convert.ToInt32(numberOfPosts));
-if (blogposts.Any())
-{
-    <div class="blogposts">
-        @foreach (var post in blogposts)
-        {
-            @Html.Partial(post.GetPartialView(), post)
-        }
-    </div>
+    var scopedLocator = this.Context.GetScopedLocator();
+    var blogService = scopedLocator.Get<RenderingsExample.Business.Blogs.BlogListingService>();
+    var blogposts = blogService.GetBlogPosts(startNodeId, Convert.ToInt32(numberOfPosts));
+    if (blogposts.Any())
+    {
+        <div class="blogposts">
+            @foreach (var post in blogposts)
+            {
+                @Html.Partial(post.GetPartialView(), post)
+            }
+        </div>
     }
 }
