@@ -24,11 +24,10 @@ namespace RenderingsExample
                 typeof(Application).Assembly
             };
 
-            //todo: add Extensions.Mvc to setup instructions
             preFilteredAssemblies = preFilteredAssemblies.Union(discoverableAssemblies);
 
             // can be customized further using a IStartupConfiguration implementation
             DotNetStarter.ApplicationContext.Startup(configuration: new CustomStartupConfiguration(preFilteredAssemblies));
         }
-    }    
+    }
 }

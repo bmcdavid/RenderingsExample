@@ -1,20 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.People>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-    Layout = "Master-Old.cshtml";
-}
-@helper SocialLink(string content, string service)
-{
-    if (!string.IsNullOrEmpty(content))
-    {
-        <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
-    }
-}       
-
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+﻿@model RenderingsExample.Models.ViewModels.People
+      
 
 <section class="section">
-
     <div class="container">
         <!-- todo: implement department filter -->
         <!--
@@ -27,25 +14,9 @@
         </nav>
         -->
         <div class="employee-grid">
-            @foreach (ContentModels.Person person in Model.Content.Children)
+            @foreach (var person in Model.PeopleList) // all children
             {
-
-                <div class="employee-grid__item">
-                    <div class="employee-grid__item__image" style="background-image: url('@person.Photo.Url')"></div>
-                    <div class="employee-grid__item__details">
-                        <h3 class="employee-grid__item__name">@person.Name</h3>
-                        @if (!string.IsNullOrEmpty(person.Email))
-                        {
-                            <a href="mailto:@person.Email" class="employee-grid__item__email">@person.Email</a>
-                        }
-                        <div class="employee-grid__item__contact">
-                            @SocialLink(person.FacebookUsername, "Facebook")
-                            @SocialLink(person.TwitterUsername, "Twitter")
-                            @SocialLink(person.LinkedInUsername, "LinkedIn")
-                            @SocialLink(person.InstagramUsername, "Instagram")
-                        </div>
-                    </div>
-                </div>
+                @Html.Partial(person.GetPartialView(), person)
             }
         </div>
     </div>

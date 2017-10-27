@@ -5,7 +5,6 @@
         public static class PropertyAliases
         {
             public const string BodyTextPropertyAlias = "bodyText";
-
         }
     }
 }

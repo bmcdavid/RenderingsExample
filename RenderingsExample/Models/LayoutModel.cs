@@ -2,6 +2,8 @@
 using Renderings;
 using Renderings.UmbracoCms;
 using RenderingsExample.Models.ViewModels;
+using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
@@ -18,6 +20,7 @@ namespace RenderingsExample.Models
         private readonly IRenderingCreatorScoped _renderingCreatorScoped;
         private Home _Home;
         private SiteSettings _Settings;
+        private List<IPublishedContent> _MainNavigation;
 
         public LayoutModel(IHomepageResolver homepageResolver, UmbracoHelper umbracoHelper, IRenderingCreatorScoped renderingCreatorScoped)
         {
@@ -39,6 +42,19 @@ namespace RenderingsExample.Models
                 }
 
                 return _Home;
+            }
+        }
+
+        public List<IPublishedContent> MainNavigation
+        {
+            get
+            {
+                if(_MainNavigation == null)
+                {
+                    _MainNavigation = HomePage.Content.Children.Where(x => x.IsVisible()).ToList();
+                }
+
+                return _MainNavigation;
             }
         }
 

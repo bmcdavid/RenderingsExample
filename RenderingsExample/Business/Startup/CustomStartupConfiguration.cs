@@ -5,6 +5,9 @@ using System.Reflection;
 
 namespace RenderingsExample.Business.Startup
 {
+    /// <summary>
+    /// Example startup configuration which sets the environment from the app setting 'UmbracoEnv';
+    /// </summary>
     public class CustomStartupConfiguration : IStartupConfigurationWithEnvironment<IStartupEnvironmentWeb>
     {
         public CustomStartupConfiguration(IEnumerable<Assembly> assemblies)

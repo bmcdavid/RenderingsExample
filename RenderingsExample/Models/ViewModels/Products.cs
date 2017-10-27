@@ -9,40 +9,27 @@ namespace RenderingsExample.Models.ViewModels
     [RenderingDocumentAlias("products")]
     public class Products : PageBase
     {
-        private IRenderingCreatorScoped _Creator;
-        private IRenderingAliasResolver _Resolver;
+        private readonly ContentConversionService _ContentConverter;
 
         public Products(IPublishedContent content, ViewDependencies viewDependencies) : base(content, viewDependencies)
         {
-            _Creator = viewDependencies.RenderingCreatorScoped;
-            _Resolver = viewDependencies.RenderingAliasResolver;
+            _ContentConverter = viewDependencies.ContentConversionService;
         }
-
-        ///<summary>
-		/// Default Currency: This is just used to prefix pricing
-		///</summary>
+        
 		[RenderingPropertyAlias("defaultCurrency")]
         public string DefaultCurrency
         {
             get { return Content.GetPropertyValue<string>("defaultCurrency"); }
         }
-
-        ///<summary>
-        /// Featured Products
-        ///</summary>
+        
         [RenderingPropertyAlias("featuredProducts")]
         public IEnumerable<Product> FeaturedProducts
         {
             get
             {
-                var alias = _Resolver.ResolveType(typeof(Product));
-                var creator = _Creator.GetCreator<IPublishedContent>(alias);
                 var featured = Content.GetPropertyValue<IEnumerable<IPublishedContent>>("featuredProducts");
 
-                foreach (var product in featured)
-                {
-                    yield return creator.Invoke(product) as Product;
-                }
+                return _ContentConverter.ConvertToRenderings<Product>(featured);
             }
         }
     }

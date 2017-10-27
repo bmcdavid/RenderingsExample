@@ -1,0 +1,26 @@
+﻿@model RenderingsExample.Models.ViewModels.Person
+
+@helper SocialLink(string content, string service)
+{
+    if (!string.IsNullOrEmpty(content))
+    {
+            <a class="employee-grid__item__contact-item" href="http://@(service).com/@content">@service</a>
+    }
+}
+
+<div class="employee-grid__item">
+    <div class="employee-grid__item__image" style="background-image: url('@Model.Photo.Url')"></div>
+    <div class="employee-grid__item__details">
+        <h3 class="employee-grid__item__name">@Model.Content.Name</h3>
+        @if (!string.IsNullOrEmpty(Model.Email))
+        {
+            <a href="mailto:@Model.Email" class="employee-grid__item__email">@Model.Email</a>
+        }
+        <div class="employee-grid__item__contact">
+            @SocialLink(Model.FacebookUsername, "Facebook")
+            @SocialLink(Model.TwitterUsername, "Twitter")
+            @SocialLink(Model.LinkedInUsername, "LinkedIn")
+            @SocialLink(Model.InstagramUsername, "Instagram")
+        </div>
+    </div>
+</div>

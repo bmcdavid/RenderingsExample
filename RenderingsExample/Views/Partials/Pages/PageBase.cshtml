@@ -1,3 +1,7 @@
 ﻿@model RenderingsExample.Models.ViewModels.PageBase
 
-@Model.Content.Name as partial
+<div>
+    <a href="@Model.Content.Url">
+        @Model.Content.Name
+    </a>
+</div>

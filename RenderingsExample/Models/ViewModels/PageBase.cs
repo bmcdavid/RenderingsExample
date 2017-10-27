@@ -20,7 +20,7 @@ namespace RenderingsExample.Models.ViewModels
             _renderingCoordinator = viewDependencies.RenderingCoordinator;
         }
 
-        //{{"name": "1 column layout",  "sections": [{ "grid": 12,  "rows": []    }  ]}}
+        //{{"name": "1 column layout",  "sections": [{ "grid": 12,  "rows": [] } ]}}
         public bool HasBodyContent => BodyText.HasValues && BodyText["sections"][0].Value<JArray>("rows").Count > 0;
 
         private JToken _BodyText;

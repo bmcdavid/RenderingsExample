@@ -15,13 +15,15 @@ namespace RenderingsExample.Business
             LayoutModel layoutModel,
             IRenderingAliasResolver renderingAliasResolver,
             IRenderingCreatorScoped renderingCreatorScoped, 
-            RenderingCoordinator renderingCoordinator)
+            RenderingCoordinator renderingCoordinator,
+            ContentConversionService contentConversionService)
         {
             UmbracoHelper = umbracoHelper;
             LayoutModel = layoutModel;
             RenderingAliasResolver = renderingAliasResolver;
             RenderingCreatorScoped = renderingCreatorScoped;
             RenderingCoordinator = renderingCoordinator;
+            ContentConversionService = contentConversionService;
         }
 
         public UmbracoHelper UmbracoHelper { get; }
@@ -29,5 +31,6 @@ namespace RenderingsExample.Business
         public IRenderingAliasResolver RenderingAliasResolver { get; }
         public IRenderingCreatorScoped RenderingCreatorScoped { get; }
         public RenderingCoordinator RenderingCoordinator { get; }
+        public ContentConversionService ContentConversionService { get; }
     }
 }

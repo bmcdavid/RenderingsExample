@@ -21,10 +21,7 @@ namespace RenderingsExample.Models.ViewModels
         {
             get { return Content.GetPropertyValue<IEnumerable<string>>("categories"); }
         }
-
-        ///<summary>
-        /// Excerpt: Introduction to your blog post. This is also used in the summaries on the front of the blog as well as the homepage
-        ///</summary>
+        
         [RenderingPropertyAlias("excerpt")]
         public string Excerpt
         {

@@ -1,8 +1,5 @@
 ﻿@model RenderingsExample.Models.ViewModels.Products
 
-@{ 
-    Layout = "MasterWithHeader.cshtml";
-}
 <section class="section">
     <div class="container">
         <!-- todo: implement category selector -->
@@ -20,12 +17,7 @@
             {
                 foreach (var product in Model.FeaturedProducts)
                 {
-                    <a href="@product.Content.Url" class="product-grid__item" style="background-image: url('@product.Photos.FirstOrDefault().Url')">
-                        <div class="product-grid__item__overlay">
-                            <div class="product-grid__item__name">@product.ProductName</div>
-                            <div class="product-grid__item__price">@Model.DefaultCurrency @product.Price.ToString("F")</div>
-                        </div>
-                    </a>
+                    @Html.Partial(product.GetPartialView(), product)
                 }
             }
         </div>
