@@ -1,0 +1,12 @@
+﻿@model RenderingsExample.Models.ViewModels.BlogPost
+
+<a href="@Model.Content.Url" class="blogpost">
+    <div class="blogpost-meta">
+        <small class="blogpost-date">@Model.CreateDate.ToShortDateString()</small>
+        <small class="blogpost-cat">
+            @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+        </small>
+    </div>
+    <h3 class="blogpost-title">@Model.PageTitle (example change for Macro tag)</h3>
+    <div class="blogpost-excerpt">@Model.Excerpt</div>
+</a>

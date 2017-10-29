@@ -456,6 +456,7 @@
     <Content Include="Views\Partials\Blocks\Feature.cshtml" />
     <Content Include="Views\Partials\Pages\Person.cshtml" />
     <Content Include="Views\Partials\Pages\Product.cshtml" />
+    <Content Include="Views\Partials\Pages\BlogPost-Macro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -471,6 +472,7 @@
     <Compile Include="Business\ContentConversionService.cs" />
     <Compile Include="Business\RenderingEngine\RenderingCoordinator.cs" />
     <Compile Include="Business\RenderingEngine\ITemplateSelector.cs" />
+    <Compile Include="Business\RenderingEngine\Selectors\BlogPostMacroSelector.cs" />
     <Compile Include="Business\RenderingEngine\Selectors\ProductSelector.cs" />
     <Compile Include="Business\RenderingEngine\Selectors\BlogPostSelector.cs" />
     <Compile Include="Business\RenderingEngine\Selectors\DefaultBlockSelector.cs" />

@@ -6,5 +6,10 @@
         {
             public const string BodyTextPropertyAlias = "bodyText";
         }
+
+        public static class Tags
+        {
+            public const string Macro = "Macro";
+        }
     }
 }

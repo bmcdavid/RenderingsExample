@@ -4,12 +4,15 @@ using DotNetStarter.Abstractions;
 
 namespace RenderingsExample.Business.RenderingEngine.Selectors
 {
+    /// <summary>
+    /// The typeof(DefaultPageSelector) allows this selector to override the default
+    /// </summary>
     [Register(typeof(ITemplateSelector), LifeTime.Singleton, typeof(DefaultPageSelector))]
     public class ProductSelector : ITemplateSelector
     {
         public bool IsMatch(IRendering rendering, string tagName)
         {
-            return rendering is Product && string.IsNullOrWhiteSpace(tagName);
+            return rendering is Product;
         }
 
         public string ViewPath(IRendering rendering, string tagName)

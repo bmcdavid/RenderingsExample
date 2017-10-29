@@ -23,6 +23,10 @@ namespace RenderingsExample.Business
         /// </summary>
         private Dictionary<Tuple<Type, string>, string> _Lookups;
 
+        /// <summary>
+        /// Injected constructor for all registered ITemplateSelectors
+        /// </summary>
+        /// <param name="templateSelectors"></param>
         public RenderingCoordinator(IEnumerable<ITemplateSelector> templateSelectors)
         {
             _TemplateSelectors = templateSelectors;

@@ -14,7 +14,8 @@
         <div class="blogposts">
             @foreach (var post in blogposts)
             {
-                @Html.Partial(post.GetPartialView(), post)
+                // example of using a tag to change view markup
+                @Html.Partial(post.GetPartialView(RenderingsExample.Business.Constants.Tags.Macro), post)
             }
         </div>
     }
