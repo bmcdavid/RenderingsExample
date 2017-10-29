@@ -11,12 +11,12 @@ namespace RenderingsExample.Models.ViewModels
     public class Product : PageBase
     {
         private readonly IRenderingAliasResolver _Resolver;
-        private readonly IRenderingCreatorScoped _Creator;
+        private readonly ContentConversionService _ContentConverter;
 
         public Product(IPublishedContent content, ViewDependencies viewDependencies) : base(content, viewDependencies)
         {
             _Resolver = viewDependencies.RenderingAliasResolver;
-            _Creator = viewDependencies.RenderingCreatorScoped;
+            _ContentConverter = viewDependencies.ContentConversionService;
         }
 
         ///<summary>
@@ -45,17 +45,9 @@ namespace RenderingsExample.Models.ViewModels
         {
             get
             {
-                var alias = _Resolver.ResolveType(typeof(Blocks.Feature));
-                var creator = _Creator.GetCreator<IPublishedContent>(alias);
                 var features = Content.GetPropertyValue<IEnumerable<IPublishedContent>>("features");
 
-                if (features == null)
-                    yield break;
-
-                foreach (var feature in features)
-                {
-                    yield return creator.Invoke(feature) as Blocks.Feature;
-                }
+                return _ContentConverter.ConvertToRenderings<Blocks.Feature>(features);
             }
         }
 
@@ -90,6 +82,7 @@ namespace RenderingsExample.Models.ViewModels
         {
             get
             {
+                // Example of getting a property alias without re-typing magic string
                 var alias = _Resolver.ResolvePropertyAlias<Products>(p => p.DefaultCurrency);
                 return Content.GetPropertyValue<string>(alias, true);
             }

@@ -7,6 +7,9 @@ namespace RenderingsExample
 {
     public class Application : Umbraco.Web.UmbracoApplication
     {
+        /// <summary>
+        /// Executs DotNetStarter.ApplicationContext.Startup, this class is used in the global.asax inherits
+        /// </summary>
         public Application()
         {
             // discovers assemblies using: [assembly: DotNetStarter.Abstractions.DiscoverableAssembly]

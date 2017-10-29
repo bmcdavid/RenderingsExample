@@ -1,13 +1,13 @@
 ﻿using DotNetStarter.Abstractions;
 
 // hack: this is only to demo how you can swap easily between structuremap and dryioc, only 1 is needed
-[assembly: LocatorRegistryFactory(typeof(RenderingsExample.ApplicationLocatorRegistryFactor),
+[assembly: LocatorRegistryFactory(typeof(RenderingsExample.ApplicationLocatorRegistryFactory),
     typeof(DotNetStarter.DryIocLocatorFactory),
     typeof(DotNetStarter.StructureMapFactory))]
 
 namespace RenderingsExample
 {
-    public class ApplicationLocatorRegistryFactor : ILocatorRegistryFactory
+    public class ApplicationLocatorRegistryFactory : ILocatorRegistryFactory
     {
         public ILocatorRegistry CreateRegistry()
         {

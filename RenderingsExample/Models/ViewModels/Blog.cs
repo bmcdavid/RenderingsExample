@@ -10,16 +10,10 @@ namespace RenderingsExample.Models.ViewModels
     [RenderingDocumentAlias("blog")]
     public class Blog : PageBase
     {
-        private readonly IRenderingCreatorScoped _renderignCreator;
-
-        public IRenderingAliasResolver _renderingResolver { get; }
-
         private readonly BlogListingService _blogListingService;
 
         public Blog(IPublishedContent content, ViewDependencies viewDependencies, BlogListingService blogListingService) : base(content, viewDependencies)
         {
-            _renderignCreator = viewDependencies.RenderingCreatorScoped;
-            _renderingResolver = viewDependencies.RenderingAliasResolver;
             _blogListingService = blogListingService;
         }
 

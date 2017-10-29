@@ -465,7 +465,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
-    <Compile Include="ApplicationLocatorRegistryFactor.cs" />
+    <Compile Include="ApplicationLocatorRegistryFactory.cs" />
     <Compile Include="ApplicationSetupMvc.cs" />
     <Compile Include="Business\Blogs\BlogListingService.cs" />
     <Compile Include="Business\Constants.cs" />
