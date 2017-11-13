@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using Renderings;
+﻿using Renderings;
 using RenderingsExample.Business;
 using System.Collections.Generic;
+using System.Linq;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
@@ -76,6 +76,27 @@ namespace RenderingsExample.Models.ViewModels
         public string ProductName
         {
             get { return Content.GetPropertyValue<string>("productName"); }
+        }
+
+        List<Product> _RelatedProducts;
+
+        ///<summary>
+        /// A list of manually related products
+        ///</summary>
+        [RenderingPropertyAlias("relatedProducts")]
+        public List<Product> RelatedProducts
+        {
+            get
+            {
+                if (_RelatedProducts == null)
+                {
+                    var content = Content.GetPropertyValue<IEnumerable<IPublishedContent>>("relatedProducts");
+
+                    _RelatedProducts = _ContentConverter.ConvertToRenderings<Product>(content).ToList();
+                }
+
+                return _RelatedProducts;
+            }
         }
 
         public string DefaultCurrency

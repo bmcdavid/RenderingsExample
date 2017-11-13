@@ -36,3 +36,16 @@
         </div>
     </section>
 }
+@if (Model.RelatedProducts.Any())
+{
+    <section class="section">
+        <div class="row">
+            <div class="product-grid">
+                @foreach (var product in Model.RelatedProducts)
+                {
+                    @Html.Partial(product.GetPartialView(RenderingsExample.Business.Constants.Tags.RelatedProduct), product)
+                }
+            </div>
+        </div>
+    </section>
+}

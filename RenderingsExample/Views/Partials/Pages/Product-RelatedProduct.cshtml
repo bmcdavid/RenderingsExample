@@ -1,0 +1,8 @@
+﻿@model RenderingsExample.Models.ViewModels.Product
+
+<a href="@Model.Content.Url" class="product-grid__item" style="background-image: url('@Model.Photos.FirstOrDefault().Url')">
+    <div class="product-grid__item__overlay">
+        <div class="product-grid__item__name">@Model.ProductName (related view)</div>
+        <div class="product-grid__item__price">@Model.DefaultCurrency @Model.Price.ToString("F")</div>
+    </div>
+</a>

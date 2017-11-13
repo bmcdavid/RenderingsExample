@@ -18,7 +18,7 @@ namespace RenderingsExample.Business.Startup
             DependencySorter = new DotNetStarter.DependencySorter();
             AssemblyFilter = null;
             AssemblyScanner = new DotNetStarter.AssemblyScanner();
-            Logger = new DotNetStarter.StringLogger();
+            Logger = new DotNetStarter.StringLogger(LogLevel.Error, 1024000); // only log errors and reset after 1MB
             ModuleFilter = new DotNetStarter.StartupModuleFilter();
             TimedTaskManager = new DotNetStarter.TimedTaskManager();
         }

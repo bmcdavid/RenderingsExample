@@ -10,6 +10,8 @@
         public static class Tags
         {
             public const string Macro = "Macro";
+
+            public const string RelatedProduct = "RelatedProduct";
         }
     }
 }
