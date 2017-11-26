@@ -7,7 +7,7 @@ namespace RenderingsExample.Business.RenderingEngine.Selectors
     /// <summary>
     /// The typeof(DefaultPageSelector), typeof(BlogPostSelector) allows this selector to override both the default and BlogPost when the tagName is Macro
     /// </summary>
-    [Register(typeof(ITemplateSelector), LifeTime.Singleton, typeof(DefaultPageSelector), typeof(BlogPostSelector))]
+    [Registration(typeof(ITemplateSelector), Lifecycle.Singleton, typeof(DefaultPageSelector), typeof(BlogPostSelector))]
     public class BlogPostMacroSelector : ITemplateSelector
     {
         public bool IsMatch(IRendering rendering, string tagName)

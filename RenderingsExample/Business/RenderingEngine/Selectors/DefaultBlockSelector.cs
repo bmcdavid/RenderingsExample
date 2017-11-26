@@ -4,7 +4,7 @@ using RenderingsExample.Models.ViewModels.Blocks;
 
 namespace RenderingsExample.Business.RenderingEngine.Selectors
 {
-    [Register(typeof(ITemplateSelector), LifeTime.Singleton)]
+    [Registration(typeof(ITemplateSelector), Lifecycle.Singleton)]
     public class DefaultBlockSelector : ITemplateSelector
     {
         public bool IsMatch(IRendering rendering, string tagName)

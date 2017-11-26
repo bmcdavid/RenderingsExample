@@ -2607,6 +2607,25 @@
 		 */
             getCurrent: function () {
                 return nArray;
+            },
+            /**
+		 * @ngdoc method
+		 * @name umbraco.services.historyService#getLastAccessedItemForSection
+		 * @methodOf umbraco.services.historyService
+		 *
+		 * @description
+		 * Method to return the item that was last accessed in the given section
+		 *
+         * @param {string} sectionAlias Alias of the section to return the last accessed item for.
+		 */
+            getLastAccessedItemForSection: function (sectionAlias) {
+                for (var i = 0, len = nArray.length; i < len; i++) {
+                    var item = nArray[i];
+                    if (item.link.indexOf(sectionAlias + '/') === 0) {
+                        return item;
+                    }
+                }
+                return null;
             }
         };
     });
@@ -8144,8 +8163,8 @@
                     var propGroups = _.find(genericTab.properties, function (item) {
                         return item.alias === '_umb_membergroup';
                     });
-                    saveModel.email = propEmail.value;
-                    saveModel.username = propLogin.value;
+                    saveModel.email = propEmail.value.trim();
+                    saveModel.username = propLogin.value.trim();
                     saveModel.password = this.formatChangePasswordModel(propPass.value);
                     var selectedGroups = [];
                     for (var n in propGroups.value) {

@@ -15,12 +15,12 @@ namespace RenderingsExample.Business.Startup
             Assemblies = assemblies;
             Environment = new DotNetStarter.Web.StartupEnvironmentWeb(environmentName: ConfigurationManager.AppSettings["UmbracoEnv"]);
             DependencyFinder = new DotNetStarter.DependencyFinder();
-            DependencySorter = new DotNetStarter.DependencySorter();
+            DependencySorter = new DotNetStarter.DependencySorter((o,type) => new DotNetStarter.DependencyNode(o,type));
             AssemblyFilter = null;
             AssemblyScanner = new DotNetStarter.AssemblyScanner();
             Logger = new DotNetStarter.StringLogger(LogLevel.Error, 1024000); // only log errors and reset after 1MB
             ModuleFilter = new DotNetStarter.StartupModuleFilter();
-            TimedTaskManager = new DotNetStarter.TimedTaskManager();
+            TimedTaskManager = new DotNetStarter.TimedTaskManager(() => new DotNetStarter.RequestSettingsProvider());
         }
 
         public IEnumerable<Assembly> Assemblies { get; }
@@ -29,7 +29,7 @@ namespace RenderingsExample.Business.Startup
         public IDependencyFinder DependencyFinder { get; }
         public IDependencySorter DependencySorter { get; }
         public IStartupEnvironmentWeb Environment { get; }
-        IStartupEnvironment IStartupConfigurationWithEnvironment.Environment => Environment;
+        IStartupEnvironment IStartupConfiguration.Environment => Environment;
         public IStartupLogger Logger { get; }
         public IStartupModuleFilter ModuleFilter { get; }
         public ITimedTaskManager TimedTaskManager { get; }

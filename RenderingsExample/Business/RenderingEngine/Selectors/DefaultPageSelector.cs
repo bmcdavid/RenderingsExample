@@ -4,7 +4,7 @@ using DotNetStarter.Abstractions;
 
 namespace RenderingsExample.Business.RenderingEngine.Selectors
 {
-    [Register(typeof(ITemplateSelector), LifeTime.Singleton)]
+    [Registration(typeof(ITemplateSelector), Lifecycle.Singleton)]
     public class DefaultPageSelector : ITemplateSelector
     {
         public bool IsMatch(IRendering rendering, string tagName)

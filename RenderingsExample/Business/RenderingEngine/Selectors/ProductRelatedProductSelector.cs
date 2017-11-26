@@ -7,7 +7,7 @@ namespace RenderingsExample.Business.RenderingEngine.Selectors
     /// <summary>
     /// The typeof(DefaultPageSelector) allows this selector to override the default
     /// </summary>
-    [Register(typeof(ITemplateSelector), LifeTime.Singleton, typeof(ProductSelector))]
+    [Registration(typeof(ITemplateSelector), Lifecycle.Singleton, typeof(ProductSelector))]
     public class ProductRelatedProductSelector : ITemplateSelector
     {
         public bool IsMatch(IRendering rendering, string tagName)
