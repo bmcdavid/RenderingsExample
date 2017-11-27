@@ -26,10 +26,10 @@ namespace RenderingsExample.Business
         /// <summary>
         /// Injected constructor for all registered ITemplateSelectors
         /// </summary>
-        /// <param name="templateSelectors"></param>
-        public RenderingCoordinator(IEnumerable<ITemplateSelector> templateSelectors)
+        /// <param name="locator"></param>
+        public RenderingCoordinator(ILocator locator)
         {
-            _TemplateSelectors = templateSelectors;
+            _TemplateSelectors = locator.GetAll<ITemplateSelector>().ToList();
             _Lookups = new Dictionary<Tuple<Type, string>, string>();
         }
 

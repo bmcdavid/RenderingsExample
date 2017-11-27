@@ -16,7 +16,10 @@ namespace RenderingsExample
             // uncomment to use DryIoc
             // return new DotNetStarter.Locators.DryIocLocator();
 
-            return new DotNetStarter.Locators.StructureMapLocator();
+            // uncomment to use Structuremap
+            // return new DotNetStarter.Locators.StructureMapLocator();
+
+            return new DotNetStarter.Locators.LightInjectLocator();
         }
     }
 }

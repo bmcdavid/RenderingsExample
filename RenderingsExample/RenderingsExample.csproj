@@ -81,6 +81,9 @@
     <Reference Include="DotNetStarter.Locators.DryIoc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetStarter.DryIoc.2.0.0\lib\net45\DotNetStarter.Locators.DryIoc.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetStarter.Locators.LightInject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetStarter.Locators.LightInject.1.0.1\lib\net452\DotNetStarter.Locators.LightInject.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetStarter.Locators.StructureMap, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetStarter.StructureMap.2.0.0\lib\net45\DotNetStarter.Locators.StructureMap.dll</HintPath>
     </Reference>
@@ -110,6 +113,9 @@
     </Reference>
     <Reference Include="interfaces, Version=1.0.6528.26342, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.1.1\lib\net46\LightInject.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\log4net.dll</HintPath>
@@ -486,6 +492,7 @@
     <Compile Include="Business\ViewDependencies.cs" />
     <Compile Include="Controllers\CustomUmbracoMvcRenderingController.cs" />
     <Compile Include="Business\Startup\CustomStartup.cs" />
+    <Compile Include="HackForLightInject.cs" />
     <Compile Include="Models\IWebPage.cs" />
     <Compile Include="Models\LayoutModel.cs" />
     <Compile Include="Models\SiteSettings.cs" />
