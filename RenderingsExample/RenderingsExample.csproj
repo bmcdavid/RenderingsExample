@@ -242,7 +242,7 @@
       <HintPath>..\packages\System.Reflection.Metadata.1.5.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Cryptography.Encoding">
@@ -254,7 +254,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.1\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Text.Encoding.CodePages, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -327,11 +327,11 @@
       <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Terratype, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Terratype.1.0.13\lib\net45\Terratype.dll</HintPath>
+    <Reference Include="Terratype, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Terratype.1.0.14\lib\net45\Terratype.dll</HintPath>
     </Reference>
-    <Reference Include="Terratype.GoogleMapsV3, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Terratype.GoogleMapsV3.1.0.13\lib\net45\Terratype.GoogleMapsV3.dll</HintPath>
+    <Reference Include="Terratype.GoogleMapsV3, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Terratype.GoogleMapsV3.1.0.14\lib\net45\Terratype.GoogleMapsV3.dll</HintPath>
     </Reference>
     <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\TidyNet.dll</HintPath>
@@ -462,7 +462,9 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Web.config" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
