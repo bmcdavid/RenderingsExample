@@ -8,7 +8,7 @@ The database is included and can be login using:
 
 ```
 Username: admin@noreply.com
-Password: 12345678aA!
+Password: 1234567aA!
 ```
 
 For more information on Renderings please review the [read me](https://github.com/bmcdavid/Renderings) on its GitHub page.
