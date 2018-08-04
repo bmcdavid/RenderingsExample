@@ -1,6 +1,6 @@
 ﻿using DotNetStarter.Abstractions;
 
-namespace RenderingsExample.Business.Startup
+namespace RenderingsExample.Business.StartupModules
 {
     /// <summary>
     /// Custom locator configure which runs after Registration and Register attributes are added

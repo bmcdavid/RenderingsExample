@@ -1,36 +1,42 @@
-﻿using RenderingsExample.Business.Startup;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using DotNetStarter.Abstractions;
+using DotNetStarter.Configure;
+using System.Configuration;
 
 namespace RenderingsExample
 {
     public class Application : Umbraco.Web.UmbracoApplication
     {
+        private static StartupBuilder _startupBuilder; // to avoid trying to start twice
+
         /// <summary>
         /// Executs DotNetStarter.ApplicationContext.Startup, this class is used in the global.asax inherits
         /// </summary>
         public Application()
         {
-            // discovers assemblies using: [assembly: DotNetStarter.Abstractions.DiscoverableAssembly]
-            IList<Assembly> discoverableAssemblies = DotNetStarter.ApplicationContext.GetScannableAssemblies();
-            IEnumerable<Assembly> preFilteredAssemblies = new Assembly[]
-            {
-                // Scan for backoffice controllers
-                typeof(Umbraco.Web.UmbracoApplication).Assembly,
-
-                // add additional umbraco plugins, which inject controllers
-                //typeof(Umbraco.Forms.Web.Controllers.UmbracoFormsController).Assembly,
-                //typeof(Diplo.TraceLogViewer.Controllers.TraceLogTreeController).Assembly,
-
-                // types in this project
-                typeof(Application).Assembly
-            };
-
-            preFilteredAssemblies = preFilteredAssemblies.Union(discoverableAssemblies);
-
-            // can be customized further using a IStartupConfiguration implementation
-            DotNetStarter.ApplicationContext.Startup(configuration: new CustomStartupConfiguration(preFilteredAssemblies));
+            if (_startupBuilder != null) return;
+            _startupBuilder = StartupBuilder.Create()
+                .UseEnvironment(new DotNetStarter.Web.StartupEnvironmentWeb(environmentName: ConfigurationManager.AppSettings["UmbracoEnv"]))
+                .ConfigureAssemblies(assemblies =>
+                {
+                    assemblies
+                    .WithDiscoverableAssemblies()
+                    .WithAssemblyFromType<Umbraco.Web.UmbracoApplication>()// Scan for backoffice controllers
+                    // add additional umbraco plugins, which inject controllers
+                    //.WithAssemblyFromType<Umbraco.Forms.Web.Controllers.UmbracoFormsController>()
+                    //.WithAssemblyFromType<Diplo.TraceLogViewer.Controllers.TraceLogTreeController>()
+                    .WithAssemblyFromType<Application>();//types in this project
+                })
+                .OverrideDefaults(defaults =>
+                {
+                    defaults
+                    // hack: Each of these implementations may also be passed an already configured DI container instances
+                    //.UseLocatorRegistryFactory(new DotNetStarter.Locators.DryIocLocatorFactory())
+                    .UseLocatorRegistryFactory(new DotNetStarter.Locators.StructureMapFactory())
+                    //.UseLocatorRegistryFactory(new DotNetStarter.Locators.LightInjectLocatorRegistryFactory())
+                    .UseLogger(new DotNetStarter.StringLogger(LogLevel.Error, 1024000)); // clears log after 1MB
+                })
+                .Build();
+            _startupBuilder.Run();
         }
     }
 }

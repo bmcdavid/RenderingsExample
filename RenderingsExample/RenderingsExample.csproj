@@ -67,34 +67,34 @@
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\controls.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.2.0.0\lib\net45\DotNetStarter.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.2.2.2\lib\net45\DotNetStarter.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Abstractions.2.0.0\lib\net45\DotNetStarter.Abstractions.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Abstractions.2.2.0\lib\net45\DotNetStarter.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Extensions.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Extensions.Mvc.2.0.0\lib\net45\DotNetStarter.Extensions.Mvc.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Extensions.Mvc.2.0.1\lib\net45\DotNetStarter.Extensions.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Extensions.WebApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Extensions.WebApi.2.0.0\lib\net45\DotNetStarter.Extensions.WebApi.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Extensions.WebApi.2.0.1\lib\net45\DotNetStarter.Extensions.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Locators.DryIoc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.DryIoc.2.0.0\lib\net45\DotNetStarter.Locators.DryIoc.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.DryIoc.2.1.0\lib\net45\DotNetStarter.Locators.DryIoc.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Locators.LightInject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Locators.LightInject.1.0.1\lib\net452\DotNetStarter.Locators.LightInject.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Locators.LightInject.1.1.0\lib\net452\DotNetStarter.Locators.LightInject.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Locators.StructureMap, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.StructureMap.2.0.0\lib\net45\DotNetStarter.Locators.StructureMap.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.StructureMap.2.2.0\lib\net45\DotNetStarter.Locators.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.RegistrationAbstractions, Version=1.0.1.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.RegistrationAbstractions.1.1.0\lib\net45\DotNetStarter.RegistrationAbstractions.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.RegistrationAbstractions.1.2.0\lib\net45\DotNetStarter.RegistrationAbstractions.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Web.2.0.0\lib\net45\DotNetStarter.Web.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Web.2.1.1\lib\net45\DotNetStarter.Web.dll</HintPath>
     </Reference>
-    <Reference Include="DryIoc, Version=2.12.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DryIoc.dll.2.12.5\lib\net45\DryIoc.dll</HintPath>
+    <Reference Include="DryIoc, Version=2.12.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DryIoc.dll.2.12.10\lib\net45\DryIoc.dll</HintPath>
     </Reference>
     <Reference Include="Examine, Version=0.1.88.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.0.1.88\lib\net45\Examine.dll</HintPath>
@@ -114,8 +114,8 @@
     <Reference Include="interfaces, Version=1.0.6528.26342, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="LightInject, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.5.1.1\lib\net46\LightInject.dll</HintPath>
+    <Reference Include="LightInject, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.1.4\lib\net46\LightInject.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\log4net.dll</HintPath>
@@ -199,8 +199,8 @@
     <Reference Include="SQLCE4Umbraco, Version=1.0.6528.26353, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.6\lib\net45\SQLCE4Umbraco.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap, Version=4.5.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StructureMap.4.5.3\lib\net45\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=4.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.6.1\lib\net45\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
@@ -474,7 +474,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
-    <Compile Include="ApplicationLocatorRegistryFactory.cs" />
     <Compile Include="ApplicationSetupMvc.cs" />
     <Compile Include="Business\Blogs\BlogListingService.cs" />
     <Compile Include="Business\Constants.cs" />
@@ -488,10 +487,9 @@
     <Compile Include="Business\RenderingEngine\Selectors\DefaultBlockSelector.cs" />
     <Compile Include="Business\RenderingEngine\Selectors\DefaultPageSelector.cs" />
     <Compile Include="Business\RenderingEngine\Selectors\PersonSelector.cs" />
-    <Compile Include="Business\Startup\CustomStartupConfiguration.cs" />
     <Compile Include="Business\ViewDependencies.cs" />
     <Compile Include="Controllers\CustomUmbracoMvcRenderingController.cs" />
-    <Compile Include="Business\Startup\CustomStartup.cs" />
+    <Compile Include="Business\StartupModules\CustomStartup.cs" />
     <Compile Include="HackForLightInject.cs" />
     <Compile Include="Models\IWebPage.cs" />
     <Compile Include="Models\LayoutModel.cs" />
@@ -510,9 +508,7 @@
     <Compile Include="Models\ViewModels\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DotNetStarter\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
