@@ -8,7 +8,7 @@ namespace RenderingsExample.Business.StartupModules
     [StartupModule(typeof(RegistrationConfiguration))]
     public class CustomStartup : ILocatorConfigure
     {
-        public void Configure(ILocatorRegistry registry, IStartupEngine engine)
+        public void Configure(ILocatorRegistry registry, ILocatorConfigureEngine engine)
         {
             // todo: can add addtional wire-ups here
             //registry.Add<ISomeService, SomeService>(lifetime: LifeTime.Singleton);

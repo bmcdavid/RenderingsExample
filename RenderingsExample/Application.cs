@@ -15,7 +15,7 @@ namespace RenderingsExample
         {
             if (_startupBuilder != null) return;
             _startupBuilder = StartupBuilder.Create()
-                .UseEnvironment(new DotNetStarter.Web.StartupEnvironmentWeb(environmentName: ConfigurationManager.AppSettings["UmbracoEnv"]))
+                .UseEnvironment(new DotNetStarter.StartupEnvironmentWeb(environmentName: ConfigurationManager.AppSettings["UmbracoEnv"]))
                 .ConfigureAssemblies(assemblies =>
                 {
                     assemblies
@@ -31,8 +31,8 @@ namespace RenderingsExample
                     defaults
                     // hack: Each of these implementations may also be passed an already configured DI container instances
                     //.UseLocatorRegistryFactory(new DotNetStarter.Locators.DryIocLocatorFactory())
-                    .UseLocatorRegistryFactory(new DotNetStarter.Locators.StructureMapFactory())
-                    //.UseLocatorRegistryFactory(new DotNetStarter.Locators.LightInjectLocatorRegistryFactory())
+                    //.UseLocatorRegistryFactory(new DotNetStarter.Locators.StructureMapFactory())
+                    .UseLocatorRegistryFactory(new DotNetStarter.Locators.LightInjectLocatorRegistryFactory())
                     .UseLogger(new DotNetStarter.StringLogger(LogLevel.Error, 1024000)); // clears log after 1MB
                 })
                 .Build();

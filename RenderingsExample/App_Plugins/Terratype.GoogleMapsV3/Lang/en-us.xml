@@ -70,7 +70,8 @@
     <key alias="stylingColbalt">Colbalt</key>
     <key alias="stylingCrisp">Crisp</key>
     <key alias="stylingDark">Dark</key>
-    <key alias="stylingDesert">Desert</key>
+	<key alias="stylingDiscreet">Discreet</key>
+	<key alias="stylingDesert">Desert</key>
     <key alias="stylingFlat">Flat</key>
     <key alias="stylingHopper">Hopper</key>
     <key alias="stylingHotel">Hotel</key>
@@ -81,12 +82,16 @@
     <key alias="stylingMutedBlue">Muted Blue</key>
     <key alias="stylingNight">Night</key>
     <key alias="stylingOldDryMud">Old Dry Mud</key>
-    <key alias="stylingPaleDawn">Pale Dawn</key>
-    <key alias="stylingRedAlert">Red Alert</key>
+	<key alias="stylingOrange">Orange</key>
+	<key alias="stylingPaleDawn">Pale Dawn</key>
+	<key alias="stylingPastel">Pastel</key>
+	<key alias="stylingRedAlert">Red Alert</key>
     <key alias="stylingRetro">Retro</key>
     <key alias="stylingShiftWorker">Shift Worker</key>
     <key alias="stylingSilver">Silver</key>
-    <key alias="stylingUnsaturatedBrowns">Unsaturated Browns</key>
+	<key alias="stylingSpots">Spots</key>
+	<key alias="stylingTuristic">Turistic</key>
+	<key alias="stylingUnsaturatedBrowns">Unsaturated Browns</key>
 
     <key alias="roadsLabel">Roads:</key>
     <key alias="roadsDescription">Do you want roads to appear on the map</key>
@@ -108,7 +113,12 @@
     <key alias="versionDescription">Which release of Google Maps V3 would you like to target (Note: Even when specifying a specific version the loaded version will vary depending on your browser)</key>
     <key alias="version3">Stable</key>
     <key alias="version3exp">Experimental</key>
-    <key alias="version328">3.28 (Released 15 February 2017)</key>
+	<key alias="version333">3.33 (Released 16 May 2018)</key>
+	<key alias="version332">3.32 (Released 13 February 2018)</key>
+	<key alias="version331">3.31 (Also Released 13 February 2018)</key>
+	<key alias="version330">3.30 (Released 15 August 2017)</key>
+	<key alias="version329">3.29 (Released 5 July 2017)</key>
+	<key alias="version328">3.28 (Released 15 February 2017)</key>
     <key alias="version327">3.27 (Released 10 January 2017)</key>
     <key alias="version326">3.26 (Released 18 August 2016)</key>
     <key alias="version325">3.25 (Released 25 May 2016)</key>
@@ -350,7 +360,7 @@
     <key alias="typeError"><![CDATA[Need to enable <a href="https://console.developers.google.com/apis" target="_blank">Google Places API Web Service</a> for your Google API Key]]></key>
 
     <key alias="countryLabel">Limit:</key>
-    <key alias="countryDescription">Limited all search results to a particular country or countries</key>
+    <key alias="countryDescription">Limit all search results to a particular country or countries</key>
     <key alias="countryMax"><![CDATA[NOTE: Google Maps V{{view().provider.version}} has a limited of only allowing search restrictions to one country. From version 3.27 onwards, this restriction has been increased to five]]></key>
     <key alias="countryAF">Afghanistan</key>
     <key alias="countryAX">Aland Islands</key>

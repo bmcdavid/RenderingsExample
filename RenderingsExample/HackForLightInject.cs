@@ -3,14 +3,12 @@ using Umbraco.Core.Models;
 
 namespace RenderingsExample
 {
-    //[StartupModule]
-    public class HackForLightInject : IStartupModule
+    [StartupModule]
+    public class HackForLightInject : ILocatorConfigure
     {
-        public void Shutdown() { }
-
-        public void Startup(IStartupEngine engine)
+        void ILocatorConfigure.Configure(ILocatorRegistry registry, ILocatorConfigureEngine engine)
         {
-            if ((engine.Locator as ILocator)?.InternalContainer is LightInject.IServiceContainer lightInjectContainer)
+            if (registry.InternalContainer is LightInject.IServiceContainer lightInjectContainer)
             {
                 lightInjectContainer.RegisterConstructorDependency((factory, info, runArgs) => (string)runArgs[0]);
 
