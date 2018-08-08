@@ -6,15 +6,12 @@ namespace RenderingsExample
 {
     public class Application : Umbraco.Web.UmbracoApplication
     {
-        private static StartupBuilder _startupBuilder; // to avoid trying to start twice
-
         /// <summary>
         /// Executs DotNetStarter.ApplicationContext.Startup, this class is used in the global.asax inherits
         /// </summary>
         public Application()
         {
-            if (_startupBuilder != null) return;
-            _startupBuilder = StartupBuilder.Create()
+            StartupBuilder.Create()
                 .UseEnvironment(new DotNetStarter.StartupEnvironmentWeb(environmentName: ConfigurationManager.AppSettings["UmbracoEnv"]))
                 .ConfigureAssemblies(assemblies =>
                 {
@@ -35,8 +32,8 @@ namespace RenderingsExample
                     .UseLocatorRegistryFactory(new DotNetStarter.Locators.LightInjectLocatorRegistryFactory())
                     .UseLogger(new DotNetStarter.StringLogger(LogLevel.Error, 1024000)); // clears log after 1MB
                 })
-                .Build();
-            _startupBuilder.Run();
+                .Build()
+                .Run();
         }
     }
 }

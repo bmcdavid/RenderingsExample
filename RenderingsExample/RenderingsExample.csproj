@@ -67,13 +67,13 @@
       <HintPath>..\packages\UmbracoCms.Core.7.11.1\lib\net45\controls.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.3.0.0\lib\net45\DotNetStarter.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.3.1.0\lib\net45\DotNetStarter.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Abstractions.3.0.0\lib\net45\DotNetStarter.Abstractions.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Abstractions.3.1.0\lib\net45\DotNetStarter.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Extensions.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetStarter.Extensions.Mvc.3.0.0\lib\net45\DotNetStarter.Extensions.Mvc.dll</HintPath>
+      <HintPath>..\packages\DotNetStarter.Extensions.Mvc.3.0.1\lib\net45\DotNetStarter.Extensions.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="DotNetStarter.Extensions.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b0eb17a6888ebfb7, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetStarter.Extensions.WebApi.3.0.0\lib\net45\DotNetStarter.Extensions.WebApi.dll</HintPath>
@@ -114,8 +114,8 @@
     <Reference Include="interfaces, Version=1.0.6750.39762, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.11.1\lib\net45\interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="LightInject, Version=5.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.5.1.5\lib\net46\LightInject.dll</HintPath>
+    <Reference Include="LightInject, Version=5.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.1.6\lib\net46\LightInject.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.11.1\lib\net45\log4net.dll</HintPath>
